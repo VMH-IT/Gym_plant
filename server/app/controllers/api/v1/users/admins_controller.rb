@@ -6,7 +6,7 @@ module Api
           @admin = Admin.all
           render json: @admin  
         end
-        
+
         def show
           unless current_user
           return render json: {
@@ -20,7 +20,7 @@ module Api
         def create
           @admin = Admin.new(admin_params)
           if @admin.save
-           # adminMailer.account_activation(@admin).deliver_now
+           # adminMailer.account_activation(@admin).deliver_now 
             render json: {
               message: 'success',
               token: ::JsonWebToken.encode({

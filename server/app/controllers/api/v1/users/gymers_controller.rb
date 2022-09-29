@@ -1,6 +1,6 @@
 module Api
   module V1
-    module Gymers
+    module Users
       class GymersController < ApplicationController
             
         def index 

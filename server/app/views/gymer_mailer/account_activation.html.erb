@@ -1,0 +1,7 @@
+<h1>Gymer#account_activation</h1>
+
+<p>
+  <%= @greeting %>, find me in app/views/gymer_mailer/account_activation.html.erb
+  <%= link_to "Activate", edit_api_v1_users_account_activation_url(@gymer.activation_token,
+email: @gymer.email) %>
+</p>
