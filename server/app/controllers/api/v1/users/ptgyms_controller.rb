@@ -38,7 +38,7 @@ module Api
 
         def sign_in
           @ptgym = Ptgym.find_by(email: params[:email])
-          if @ptgym && @ptgym.valid?(params[:password])
+          if @ptgym && @ptgym.valid_password?(params[:password])
             render json: {
               message: 'sucesss',
               token: ::JsonWebToken.encode({

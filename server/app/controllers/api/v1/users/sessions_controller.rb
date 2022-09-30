@@ -4,7 +4,7 @@ module Api
       class SessionsController < ApplicationController
         def create
           @admin = Admin.find_by(email: params[:email])
-          if @admin && @admin.valid?(params[:password])
+          if @admin && @admin.valid_password?(params[:password])
             render json: {
 							      			message: 'sucesss',
                     			token: ::JsonWebToken.encode({
