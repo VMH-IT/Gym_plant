@@ -22,7 +22,7 @@ module Api
         def create
           @ptgym = Ptgym.new(ptgym_params)
           if @ptgym.save
-            PtgymMailer.account_activation(@ptgym).deliver_now
+            # PtgymMailer.account_activation(@ptgym).deliver_now
             render json: {
               message: 'success',
               token: ::JsonWebToken.encode({
@@ -71,7 +71,7 @@ module Api
         end
     
         def ptgym_params
-          params.permit(:pt_name, :email, :password)
+          params.permit(:pt_name, :email, :password , :phoneNumber, :address, :age , :gender , :weight , :height , :academic_level, :tracked_route)
         end
 
         def correct_ptgym
