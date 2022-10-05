@@ -1,7 +1,7 @@
 module Api
   module V1
     module User1
-      class PostsController < ApplicationController
+      class PostExercisesController < ApplicationController
         before_action :authorize, only: %i[create update destroy]
         before_action :set_post, only: %i[show edit update destroy]
         before_action :correct_user, only: %i[edit update destroy]

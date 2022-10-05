@@ -51,15 +51,15 @@ module Api
         end
 
         def update
-          if @user.update(user_params)
-            render json: @user
+          if @admin.update(user_params)
+            render json: @admin
           else
-            render json: @user.errors, status: :unprocessable_entity
+            render json: @admin.errors, status: :unprocessable_entity
           end
         end
 
         def destroy
-          @user.destroy
+          @admin.destroy
         end
 
         private
