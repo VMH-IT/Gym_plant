@@ -2,7 +2,7 @@ module Api
   module V1
     module Users
       class PtgymsController < ApplicationController
-        before_action :set_ptgym, only: %i[ show update destroy ]
+        # before_action :set_ptgym, only: %i[ show update destroy ]
 
         def index
           @ptgyms = Ptgym.all

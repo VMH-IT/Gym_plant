@@ -18,8 +18,9 @@ module Api
         end
 
         def index
-          @categories = Exercise.all
-          render json: @categories
+          @q = Exercise.ransack(params[:q])
+          @exercise = @q.result(distinct: true)
+          render json: @exercise
         end
 
         def edit
@@ -54,7 +55,7 @@ module Api
 
         private
         def exercise_params
-          params.permit(:name, :description)
+          params.permit(:introduce, :category_route, :name_exersice, :perform, :time_exersice, :num_reps , :num_sets)
         end
       end
     end
