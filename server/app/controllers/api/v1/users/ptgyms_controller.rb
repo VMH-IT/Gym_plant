@@ -79,7 +79,7 @@ module Api
           redirect_to(root_url) unless current_ptgym?(@ptgym)
                                 
                                 
-          def admin_ptgym
+          def admin_ptgym 
             redirect_to(root_url) unless current_ptgym.admin?
                                   
           end

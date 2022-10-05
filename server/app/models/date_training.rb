@@ -1,0 +1,3 @@
+class DateTraining < ApplicationRecord
+	
+end

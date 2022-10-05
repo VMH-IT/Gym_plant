@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_30_072449) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_05_034509) do
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -21,6 +21,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_072449) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "date_trainings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.string "status"
+    t.datetime "time_training"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exercise_route_package", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "exercise_id", null: false
+    t.bigint "route_package_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_exercise_route_package_on_exercise_id"
+    t.index ["route_package_id"], name: "index_exercise_route_package_on_route_package_id"
   end
 
   create_table "exercises", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -71,8 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_072449) do
     t.string "height"
     t.string "academic_level"
     t.string "tracked_route"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_ptgyms_on_email", unique: true
   end
 

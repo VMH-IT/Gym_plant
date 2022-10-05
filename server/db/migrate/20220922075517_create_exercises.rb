@@ -8,6 +8,7 @@ class CreateExercises < ActiveRecord::Migration[7.0]
       t.string :time_exersice
       t.string :num_sets
       t.string :num_reps
+      
 
 
 
