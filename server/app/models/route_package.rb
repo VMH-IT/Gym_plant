@@ -1,0 +1,2 @@
+class RoutePackage < ApplicationRecord
+end

@@ -7,6 +7,15 @@ class DeviseCreatePtgyms < ActiveRecord::Migration[7.0]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :pt_name,            null: false, default: ""
+        
+      t.string :phoneNumber       
+      t.text   :address       
+      t.integer :age      
+      t.integer :gender    
+      t.string :weight 
+      t.string :height
+      t.string :academic_level
+      t.string :tracked_route
 
      
 

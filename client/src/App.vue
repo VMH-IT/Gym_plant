@@ -54,4 +54,8 @@ li {
   list-style-type: none;
 }
 
+.color{
+  color: #fecc09;
+}
+
 </style>
