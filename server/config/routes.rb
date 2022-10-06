@@ -4,21 +4,16 @@ Rails.application.routes.draw do
   devise_for :admins
   namespace :api do
     namespace :v1 do
+      namespace :ptgyms do
+        resources :sessions, only: [:create]
+      end
       namespace :users do
         resources :admins
         resources :sessions
-        resources :ptgyms do
-          collection do
-            post :sign_in
-          end
-        end
         resources :account_activations, only: [:edit]
         resources :exercises
         resources :gymers
       end
-      # namespace :gymers do
-      #   resources :gymers
-      # end
     end
   end
 end

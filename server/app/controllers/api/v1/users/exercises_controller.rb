@@ -55,7 +55,7 @@ module Api
 
         private
         def exercise_params
-          params.permit(:introduce, :category_route, :name_exersice, :perform, :time_exersice, :num_reps , :num_sets)
+          params.permit(:introduce, :category_route, :name_exersice, :perform, :time_exersice, :num_reps , :num_sets, :image)
         end
       end
     end

@@ -8,19 +8,13 @@ module Api
         end
 
         def show
-          unless current_user
-          return render json: {
-            message: 'you need to sign in'
-          }, status: 403
-          end
-            user = User.find(params[:id])
-            render json: @user
+          @admin = Admin.find(params[:id])
+          render json: @admin
         end
 
         def create
           @admin = Admin.new(admin_params)
           if @admin.save
-           # adminMailer.account_activation(@admin).deliver_now 
             render json: {
               message: 'success',
               token: ::JsonWebToken.encode({
@@ -34,32 +28,12 @@ module Api
           end
         end
 
-        def sign_in
-          @admin = Admin.find_by(email: params[:email])
-          if @admin && @admin.valid?(params[:password])
-            render json: {
-            message: 'sucesss',
-            token: ::JsonWebToken.encode({
-                                          sub: @admin.id
-                                          })
-            }
-          else
-            render json: {
-              message: 'failed' 
-            }, status: 400
-          end
-        end
-
         def update
           if @admin.update(user_params)
             render json: @admin
           else
             render json: @admin.errors, status: :unprocessable_entity
           end
-        end
-
-        def destroy
-          @admin.destroy
         end
 
         private

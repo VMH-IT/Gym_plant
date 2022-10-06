@@ -1,14 +1,14 @@
 module Api
   module V1
-    module Users
+    module Ptgyms
       class SessionsController < ApplicationController
         def create
-          @admin = Admin.find_by(email: params[:email])
-          if @admin && @admin.valid_password?(params[:password])
+          @ptgym = Ptgym.find_by(email: params[:email])
+          if @ptgym && @ptgym.valid_password?(params[:password])
             render json: {
 							      			message: 'sucesss',
                     			token: ::JsonWebToken.encode({
-                                                				admin_id: @admin.id
+                                                				ptgym_id: @ptgym.id
                                             					})
             }
           else

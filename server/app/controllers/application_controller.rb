@@ -46,7 +46,5 @@ class ApplicationController < ActionController::API
         message: "You need login"
       }
     end
-    
-
-
+  end
 end
