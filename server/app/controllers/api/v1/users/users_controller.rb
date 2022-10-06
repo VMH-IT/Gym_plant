@@ -3,7 +3,7 @@ module Api
     module Users
       class UsersController < ApplicationController
         before_action :set_user, only: %i[ show update destroy ]
-
+# create 2 function get all pt and get all gymers
         def index
           @users = User.all
           render json: @users

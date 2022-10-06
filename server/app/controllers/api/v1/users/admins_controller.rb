@@ -2,6 +2,8 @@ module Api
   module V1
     module Users
       class AdminsController < ApplicationController
+        before_action :authenticate_request_admin , only [:create]
+
         def index 
           @admin = Admin.all
           render json: @admin  
