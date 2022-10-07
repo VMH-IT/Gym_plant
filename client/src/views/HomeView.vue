@@ -92,6 +92,7 @@ export default {
 }
 
 .block-intro{
+  height: 800px;
   background-color: #eaeaea;
   padding: 0px 15% 40px 15%;
 
@@ -140,10 +141,22 @@ export default {
 }
 
 .group-service .block{
+  margin-top: 100px;
   height: 100px;
   width: 30%;
+  visibility: hidden;
+
+
   background-color: aliceblue;
-
-
+  transition: 1s;
 }
+
+.block-intro:hover .group-service .block{
+  margin-top: 20px;
+  visibility: visible;
+
+  transition: 1s;
+}
+
+
 </style>
