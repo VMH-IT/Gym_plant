@@ -19,13 +19,13 @@
           <li>
             <router-link to="/main" class="color">main</router-link>
           </li>
-          <li class="color" v-on:click="success = !success" v-if="currentUser.token === null">login</li>
-          <li class="color" v-if="currentUser.token !== null">post</li>
-          <li class="color" v-if="currentUser.token !== null">follow</li>
-          <li class="color" v-if="currentUser.token !== null">
+          <li class="color" v-on:click="success = !success" v-if="currentUser.token === ''">login</li>
+          <li class="color" v-if="currentUser.token !== ''">post</li>
+          <li class="color" v-if="currentUser.token !== ''">follow</li>
+          <li class="color" v-if="currentUser.token !== ''">
             <router-link to="/admin/listgymmer" class="color">admin</router-link>
           </li>
-          <li class="color" v-if="currentUser.token !== null" v-on:click="out = !out">out</li>
+          <li class="color" v-if="currentUser.token !== ''" v-on:click="out = !out">out</li>
           <li></li>
         </ul>
         <input type="text" class="input" />
