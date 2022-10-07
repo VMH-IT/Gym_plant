@@ -24,12 +24,14 @@
     margin: 0;
     padding: 0;
   }
-
   @import url("https://fonts.googleapis.com/css?family=Poppins");
-
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css");
 .Poppins {
   font-family: "Poppins";
   font-style: normal;
+}
+.fa{
+  font-family: "FontAwesome";
 }
 
 * {

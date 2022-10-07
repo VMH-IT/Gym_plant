@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-header></app-header>
+    <app-header class="head"></app-header>
     <router-view></router-view>
-    <app-footer></app-footer>
+    <app-footer class="footers"></app-footer>
   </div>
 </template>
   
@@ -19,4 +19,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .head{
+    z-index: 3;
+    position: sticky;
+    top: 0;
+
+  }
+
+  .footers{
+    z-index: 1;
+    position: relative;
+  }
+</style>
+
+
   
