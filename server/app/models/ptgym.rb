@@ -18,6 +18,7 @@ class Ptgym < ApplicationRecord
   belongs_to :route_packages
   belongs_to :traning_packs 
   has_and_belongs_to_many :date_trainings, join_table: 'ptgym_datetraining'
+  has_and_belongs_to_many :route_packages, join_table: 'ptgym_routepackage'
 
   # def self.digest(string)
   # cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

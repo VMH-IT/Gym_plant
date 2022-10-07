@@ -1,6 +1,4 @@
 class Admin < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable
   # attr_accessor :remember_token  
 	before_save { email.downcase!  }
@@ -8,7 +6,6 @@ class Admin < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
   									format: 	{ with: VALID_EMAIL_REGEX }
-										# unique: true 
 
   validates :password, presence: true, length:  { minimum: 6 } , allow_nil: true
     def self.digest(string)
@@ -24,7 +21,6 @@ class Admin < ApplicationRecord
     private
     def create_token  
       self.activation_token = Admin.new_token
-      #self.activation_digest = Admin.digest(activation_token)
     end
 
 end
