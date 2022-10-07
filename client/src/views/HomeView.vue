@@ -39,8 +39,13 @@
             </div>
           </div>
         </div>
-        <div >
+        <div class="service">
           <h1>FitnessGYM CHECK ALL OUR CLUB SERVICES</h1>
+          <div class="group-service flex">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+          </div>
         </div>
         
 
@@ -121,11 +126,24 @@ export default {
   color: #444;
 }
 
-
-
-
-
 .fa-check:before {
     content: "\f00c";
+}
+
+.service h1{
+  text-align: center;
+  margin:30xp 0px;
+}
+
+.group-service{
+  justify-content: space-between;
+}
+
+.group-service .block{
+  height: 100px;
+  width: 30%;
+  background-color: aliceblue;
+
+
 }
 </style>
