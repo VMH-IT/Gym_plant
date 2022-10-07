@@ -5,10 +5,12 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :ptgyms do
         resources :sessions, only: [:create]
+        resources :exercises
+        resources :ptgyms
       end
       namespace :users do
         resources :admins
-        resources :sessions
+        resources :sessions , only: [:create]
         resources :account_activations, only: [:edit]
         resources :route_packages
         resources :exercises

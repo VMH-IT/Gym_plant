@@ -2,7 +2,8 @@ module Api
   module V1
     module Users
       class AdminsController < ApplicationController
-        before_action :authenticate_request_admin , only [:create]
+        before_action :authenticate_request_admin 
+        skip_before_action :authenticate_request_admin , only: [:create]
 
         def index 
           @admin = Admin.all
@@ -20,7 +21,7 @@ module Api
             render json: {
               message: 'success',
               token: ::JsonWebToken.encode({
-                                            sub: @admin.id
+                                            admin_id: @admin.id
                                             })
               }
           else

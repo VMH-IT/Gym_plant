@@ -5,6 +5,11 @@ module Api
 				def create
           @route_package = Route_package.new(route_package_params)
           if @route_package.save
+            @exercise = params[:exercise]
+            @exercise.each do |c|
+              @exercise = Exercise.find(c)
+              @route_package.exercise << Exercise.find(c)
+            end  
             render json: {
               message: 'success'
             }

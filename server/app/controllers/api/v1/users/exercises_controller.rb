@@ -16,7 +16,7 @@ module Api
             }, status: 400
           end
         end
-
+      
         def index
           @q = Exercise.ransack(params[:q])
           @exercise = @q.result(distinct: true)

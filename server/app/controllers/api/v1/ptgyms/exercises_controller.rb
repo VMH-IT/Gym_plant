@@ -24,6 +24,13 @@ module Api
           render json: @exercise
         end
 
+        def show
+          @route_package = Route_package.find(params[:id])
+          @exercise = Route_package.exercise
+            render json: @exercise
+        end
+ 
+
         def edit
           @exercise = Exercise.find(params[:id])
           render json: @exercise
